@@ -1,0 +1,28 @@
+{"email":"prathamesh.nair@angelbroking.com","emailSent":true,"level":"info","message":"OTP sending results","mobile":"+919619088229","smsSent":true,"timestamp":"2024-10-24T10:37:59.262Z","username":"prathamesh.nair"}
+{"level":"info","message":"OTP has been sent successfully to prathamesh.nair.","timestamp":"2024-10-24T10:37:59.275Z"}
+{"email":"prathamesh.nair@angelbroking.com","emailSent":true,"level":"info","message":"OTP sending results","mobile":"+919619088229","smsSent":true,"timestamp":"2024-10-24T10:40:05.265Z","username":"prathamesh.nair"}
+{"level":"info","message":"OTP has been sent successfully to prathamesh.nair.","timestamp":"2024-10-24T10:40:05.266Z"}
+{"email":"prathamesh.nair@angelbroking.com","emailSent":true,"level":"info","message":"OTP sending results","mobile":"+919619088229","smsSent":true,"timestamp":"2024-10-24T10:41:27.077Z","username":"prathamesh.nair"}
+{"level":"info","message":"OTP has been sent successfully to prathamesh.nair.","timestamp":"2024-10-24T10:41:27.081Z"}
+{"email":"prathamesh.nair@angelbroking.com","emailSent":true,"level":"info","message":"OTP sending results","mobile":"+919619088229","smsSent":true,"timestamp":"2024-10-24T10:42:34.328Z","username":"prathamesh.nair"}
+{"level":"info","message":"OTP has been sent successfully to prathamesh.nair.","timestamp":"2024-10-24T10:42:34.330Z"}
+{"email":"prathamesh.nair@angelbroking.com","emailSent":true,"level":"info","message":"OTP sending results","mobile":"+919619088229","smsSent":true,"timestamp":"2024-10-24T10:43:08.679Z","username":"prathamesh.nair"}
+{"level":"info","message":"OTP has been sent successfully to prathamesh.nair.","timestamp":"2024-10-24T10:43:08.689Z"}
+{"email":"prathamesh.nair@angelbroking.com","emailSent":true,"level":"info","message":"OTP sending results","mobile":"+919619088229","smsSent":true,"timestamp":"2024-10-24T10:43:56.146Z","username":"prathamesh.nair"}
+{"level":"info","message":"OTP has been sent successfully to prathamesh.nair.","timestamp":"2024-10-24T10:43:56.147Z"}
+{"email":"prathamesh.nair@angelbroking.com","emailSent":true,"level":"info","message":"OTP sending results","mobile":"+919619088229","smsSent":true,"timestamp":"2024-10-24T10:48:27.751Z","username":"prathamesh.nair"}
+{"level":"info","message":"OTP has been sent successfully to prathamesh.nair.","timestamp":"2024-10-24T10:48:27.756Z"}
+{"error":{"name":"SequelizeDatabaseError","original":{"class":15,"code":"EREQUEST","lineNumber":2,"number":102,"procName":"","serverName":"AOPR0SVCSRAPP","sql":"INSERT INTO SSOLog_AngelOne (username, OTP, CreatedOn)\nVALUE(':username', ':generatedOTP', '1729768531594')","state":1},"parameters":{},"parent":{"class":15,"code":"EREQUEST","lineNumber":2,"number":102,"procName":"","serverName":"AOPR0SVCSRAPP","sql":"INSERT INTO SSOLog_AngelOne (username, OTP, CreatedOn)\nVALUE(':username', ':generatedOTP', '1729768531594')","state":1},"sql":"INSERT INTO SSOLog_AngelOne (username, OTP, CreatedOn)\nVALUE(':username', ':generatedOTP', '1729768531594')"},"level":"error","message":"Error in handleSendOTP:","timestamp":"2024-10-24T11:15:33.160Z"}
+{"error":{},"level":"error","message":"Error in handleSendOTP:","timestamp":"2024-10-24T11:21:53.363Z"}
+{"email":"prathamesh.nair@angelbroking.com","emailSent":true,"level":"info","message":"OTP sending results","mobile":"+919619088229","smsSent":true,"timestamp":"2024-10-24T11:22:44.381Z","username":"prathamesh.nair"}
+{"level":"info","message":"OTP has been sent successfully to prathamesh.nair.","timestamp":"2024-10-24T11:22:44.386Z"}
+{"error":{},"level":"error","message":"Error in handleSendOTP:","timestamp":"2024-10-24T11:31:06.661Z"}
+{"error":{},"level":"error","message":"Error in handleSendOTP:","timestamp":"2024-10-24T11:32:02.547Z"}
+{"email":"prathamesh.nair@angelbroking.com","emailSent":true,"level":"info","message":"OTP sending results","mobile":"+919619088229","smsSent":true,"timestamp":"2024-10-24T11:32:33.779Z","username":"prathamesh.nair"}
+{"level":"info","message":"OTP has been sent successfully to prathamesh.nair.","timestamp":"2024-10-24T11:32:33.783Z"}
+{"email":"prathamesh.nair@angelbroking.com","emailSent":true,"level":"info","message":"OTP sending results","mobile":"+919619088229","smsSent":true,"timestamp":"2024-10-24T11:42:51.660Z","username":"prathamesh.nair"}
+{"level":"info","message":"OTP has been sent successfully to prathamesh.nair.","timestamp":"2024-10-24T11:42:51.666Z"}
+{"email":"prathamesh.nair@angelbroking.com","emailSent":true,"level":"info","message":"OTP sending results","mobile":"+919619088229","smsSent":true,"timestamp":"2024-10-24T11:44:34.925Z","username":"prathamesh.nair"}
+{"level":"info","message":"OTP has been sent successfully to prathamesh.nair.","timestamp":"2024-10-24T11:44:34.931Z"}
+{"email":"prathamesh.nair@angelbroking.com","emailSent":true,"level":"info","message":"OTP sending results","mobile":"+919619088229","smsSent":true,"timestamp":"2024-10-24T11:46:02.591Z","username":"prathamesh.nair"}
+{"level":"info","message":"OTP has been sent successfully to prathamesh.nair.","timestamp":"2024-10-24T11:46:02.592Z"}

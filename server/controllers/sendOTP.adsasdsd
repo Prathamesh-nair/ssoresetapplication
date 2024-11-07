@@ -1,0 +1,89 @@
+const axios = require("axios");
+const { sendNodeMail } = require("../services/sendMailer");
+
+const handleSendOTP = async (username, empName) => {
+  try {
+    // Fetch mobile number and email associated with the username
+    const response = await axios.post(
+      "https://darwinboxmiddleware.angelbroking.com/api/DarwinBox/MobileEmailFromDomainId",
+      { DomainId: username },
+      { timeout: 5000 } // Set timeout for 5 seconds
+    );
+
+    if (!response.data || !response.data.Mobile || !response.data.Email) {
+      return {
+        success: false,
+        status: "User's contact information not found.",
+      };
+    }
+
+    const generatedOTP = Math.floor(100000 + Math.random() * 900000).toString();
+    const { Mobile, Email } = response.data;
+    const mobileNumber = `+91${Mobile}`;
+
+    // Prepare SMS request
+    const smsUrl =
+      "https://notification-prod.angelone.in/notifications/v2/otp/send";
+    const token = process.env.SMSTOKEN;
+    const smsRequestBody = {
+      sms: {
+        dlt_template_id: "1307162798837126439",
+        destination_mobile: mobileNumber,
+        body: `Your OTP verification code is ${generatedOTP}. Please enter the verification code and submit your details to proceed further. Regards - Angel One`,
+        message_type: "TRANSACTIONAL",
+      },
+      reqid: "A17EDCD1BE4843EE8BA2",
+      notification_type: "sso_otp",
+    };
+
+    // Email content
+    const emailBody = `Dear ${empName},<br /><br />
+      Your OTP verification code is: <b>${generatedOTP}</b><br /><br />
+      Please enter the verification code and submit your details to proceed with the password reset.<br /><br />
+      This is an automated email message, please DO NOT reply. If you have any queries regarding this notification, please email ITSupportdesk@angelbroking.com.<br /><br />
+      Regards,<br />
+      Technology Team`;
+    const emailSubject = "Domain Password Reset";
+
+    // Send SMS and Email concurrently using Promise.allSettled
+    const [smsResult, emailResult] = await Promise.allSettled([
+      axios.post(smsUrl, smsRequestBody, {
+        headers: {
+          Authorization: `Bearer ${token}`,
+          "Content-Type": "application/json",
+        },
+        timeout: 5000, // Set timeout for 5 seconds
+      }),
+      sendNodeMail(Email, emailSubject, emailBody),
+    ]);
+
+    // Handle the results of SMS and Email attempts
+    const smsSuccess = smsResult.status === "fulfilled";
+    const emailSuccess = emailResult.status === "fulfilled";
+
+    if (smsSuccess && emailSuccess) {
+      console.log(`OTP has been sent successfully to ${username}.`);
+      return {
+        success: true,
+        status: "OTP sent successfully.",
+        mobile: mobileNumber,
+      };
+    } else {
+      console.warn(
+        `Partial success: SMS sent: ${smsSuccess}, Email sent: ${emailSuccess}`
+      );
+      return {
+        success: false,
+        status: `OTP sending encountered issues. SMS sent: ${smsSuccess}, Email sent: ${emailSuccess}`,
+      };
+    }
+  } catch (error) {
+    console.error("Error in handleSendOTP:", error);
+    return {
+      success: false,
+      status: "An error occurred while processing the request.",
+    };
+  }
+};
+
+module.exports = { handleSendOTP };
